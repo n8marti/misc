@@ -1,0 +1,9 @@
+32GB SD: 30,908,350,464 B; 512 B/S; 60,367,872 sectors
+    disk_size = look at Gnome Disks for total bytes
+    sector_size = $ lsblk -n -o name,phy-sec
+
+BackupSD: 127,865,454,592 B; 512 B/S; 249,737,216 sectors
+    goal: create image that will fit on 32GB SD
+
+    Use Gnome Disks to shrink partition to 30908350000 B
+    dd if=/dev/mmcblk0 of=/dev/sda count=60367872 status=progress
